@@ -45,7 +45,7 @@ const Navbar = () => {
                     ) : ''}
                 </NavLink>
             </nav>
-            <div className='h-full flex gap-6 items-center text-sm font-medium'>
+            <div className='h-full flex sm:gap-6 items-center text-sm font-medium gap-2'>
                 <Link className='hover:text-[#4b4b4b]'>Log In</Link>
                 <button className='text-white bg-[#2f6af5] p-2 rounded-lg text-xs hover:bg-blue-700 transition-all duration-300 ease-in-out'>Get started</button>
             </div>
