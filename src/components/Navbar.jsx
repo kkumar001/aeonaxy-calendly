@@ -3,13 +3,17 @@ import calendly from '../assets/calendly.svg'
 import { Link, NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { Squash as Hamburger } from 'hamburger-react'
+import MobileNav from './MobileNav'
 
 const Navbar = () => {
     const [isProductHovered, setIsProductHovered] = useState(false);
     const [isResourcesHovered, setIsResourcesHovered] = useState(false);
+    const [isOpen, setOpen] = useState(false);
+    console.log(isOpen);
 
     return (
-        <div className='w-full md:px-16 px-4 flex justify-between items-center h-[64px]'>
+        <div className='w-full md:px-16 px-4 flex justify-between items-center h-[64px] relative'>
             <Link to='/' className='h-full flex justify-center items-center'>
                 <img src={calendly} alt="logo" className='h-10' />
             </Link>
@@ -45,10 +49,14 @@ const Navbar = () => {
                     ) : ''}
                 </NavLink>
             </nav>
-            <div className='h-full flex sm:gap-6 items-center text-sm font-medium gap-2'>
+            <div className='h-full lg:flex hidden sm:gap-6 items-center text-sm font-medium gap-2'>
                 <Link className='hover:text-[#4b4b4b]'>Log In</Link>
                 <button className='text-white bg-[#2f6af5] p-2 rounded-lg text-xs hover:bg-blue-700 transition-all duration-300 ease-in-out'>Get started</button>
             </div>
+            <div className='lg:hidden flex'>
+                <Hamburger toggled={isOpen} toggle={setOpen} size={24} />
+            </div>
+            <MobileNav isOpen={isOpen} setOpen={setOpen} />
         </div>
     )
 }

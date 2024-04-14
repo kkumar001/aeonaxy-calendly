@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <>
       <div className='w-full lg:px-16 px-4 pt-16 flex lg:flex-row flex-col gap-20 text-[#11253e] lg:items-start items-center'>
-        <div className='flex flex-col gap-4 max-w-[450px] justify-between text-center'>
+        <div className='flex flex-col gap-4 max-w-[450px] justify-between lg:text-left text-center'>
           <div className='flex flex-col gap-4'>
             <h3 className='text-3xl font-bold'>Easy <br className='lg:flex hidden '/> <span className='text-[#2f6af5]'>ahead</span></h3>
             <p className='font-extralight'>We take the work out of connecting with others so you can accomplish more.</p>
